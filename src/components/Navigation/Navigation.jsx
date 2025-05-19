@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import "./Navigation.css"
+import "./Navigation.css";
 
 const Navigation = () => {
   return (
     <nav>
       <ul className="navigation">
         <li className="navigation-links">
-          <NavLink to="/home">portfolio</NavLink>
+          <NavLink to="/">portfolio</NavLink>
         </li>
         <li className="navigation-links">
           <NavLink to="/sobre-mi">sobre mí</NavLink>
@@ -19,4 +19,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation
+export default Navigation;
