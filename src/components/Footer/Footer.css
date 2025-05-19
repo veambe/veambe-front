@@ -1,0 +1,28 @@
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+}
+
+
+.footer__text {
+  color: #6dacbf;
+  font-size: 1.5rem;
+}
+
+.media__icons {
+  display: flex;
+  gap: 10px;
+  font-size: 2rem;
+}
+
+@media (max-width: 450px) {
+  footer {
+    position: fixed;
+
+  }
+
+}
