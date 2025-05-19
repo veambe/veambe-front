@@ -1,37 +1,36 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getCategoryById } from "../services/categoryService";
+import { getAllCategories } from "../../services/categoryService";
+import { Link } from "react-router-dom";
 
 const CategoriesList = () => {
-  const { id } = useParams();
-
-  const [category, setCategory] = useState(null);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchCategory = async () => {
+    const fetchCategories = async () => {
       try {
-        const categoryData = await getCategoryById(id);
-        setCategory(categoryData);
+        const data = await getAllCategories();
+        setCategories(data);
       } catch (error) {
-        console.error("Error al cargar las categorías", error);
+        console.error("Error fetching categories", error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchCategory();
-  }, [id]);
+    fetchCategories();
+  }, []);
 
-  if (loading) return <p>Cargando categoría...</p>;
-  if (!category) return <p>Categoría no encontrada</p>;
+  if (loading) return <p>Cargando categorías...</p>;
+  if (!categories.length) return <p>Categoría no encontrada</p>;
 
   return (
     <ul>
-      <div>
-        <li key={category.id}> </li>
-        <div>{category.name}</div>
-      </div>
+      {categories.map((category) => (
+        <li key={category.id}>
+          <Link to={`/categoria/${category.id}`}>{category.name}</Link>
+        </li>
+      ))}
     </ul>
   );
 };

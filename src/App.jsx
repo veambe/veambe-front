@@ -8,6 +8,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/categoria/:id" element={""} /> 
       </Routes>
       <Footer />
     </>
