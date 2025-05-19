@@ -1,0 +1,12 @@
+.hero {
+
+  width: 550px;
+  margin-left: 30%;
+}
+
+@media (max-width: 450px) {
+  .hero {
+    width: 300px;
+    margin: 0;
+  }
+}
