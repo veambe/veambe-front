@@ -5,19 +5,42 @@ import axios from "axios";
 const CategoryDetail = () => {
   const { categoryName } = useParams();
   const [artworks, setArtworks] = useState([]);
-  const [artworkImage, setArtworkImage] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchArtworks = async () => {
+    const fetchArtworksAndImages = async () => {
       try {
         const response = await axios.get(
           `http://localhost:8080/api/v1/trabajo/categoria/${encodeURIComponent(
             categoryName
           )}`
         );
-        setArtworks(response.data);
-        setArtworkImage(response.data)
+
+        const artworksWithImages = await Promise.all(
+          response.data.map(async (art) => {
+            try {
+              const imageRes = await axios.get(
+                `http://localhost:8080/api/v1/images/artwork/${art.id}`
+              );
+              // añade la primera imagen que encuentre
+              return {
+                ...art,
+                imageUrl: imageRes.data[0]?.url || null,
+              };
+            } catch (imgErr) {
+              console.error(
+                `Error fetching image for artwork ${art.id}:`,
+                imgErr
+              );
+              return {
+                ...art,
+                imageUrl: null,
+              };
+            }
+          })
+        );
+
+        setArtworks(artworksWithImages);
       } catch (error) {
         console.error("Error fetching artworks by category:", error);
       } finally {
@@ -25,7 +48,7 @@ const CategoryDetail = () => {
       }
     };
 
-    fetchArtworks();
+    fetchArtworksAndImages();
   }, [categoryName]);
 
   if (loading) return <p>Cargando obras de la categoría...</p>;
@@ -39,9 +62,17 @@ const CategoryDetail = () => {
         <ul>
           {artworks.map((art) => (
             <li key={art.id}>
-              {art.title}
-              <p> {art.description} </p>
-              <img src={artworkImage.image} />
+              <h3>{art.title}</h3>
+              <p>{art.description}</p>
+              {art.imageUrl ? (
+                <img
+                  src={`http://localhost:8080/${art.imageUrl}`}
+                  alt={art.title}
+                  style={{ width: "200px", height: "auto" }}
+                />
+              ) : (
+                <p>No image available</p>
+              )}
             </li>
           ))}
         </ul>
