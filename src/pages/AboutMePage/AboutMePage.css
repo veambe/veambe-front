@@ -1,0 +1,20 @@
+.about-me-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 9%;
+}
+
+.about-me-images-container {
+  display: flex;
+  flex-direction: column;
+  width: 435px;
+  height: auto;
+}
+
+.about-me-text {
+  color: #6dacbf;
+  font-size: 2rem;
+
+
+}

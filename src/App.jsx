@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import UploadPage from "./pages/UploadPage/UploadPAge";
 import ArtworkPage from "./pages/ArtworkPage/ArtworkPAge";
+import AboutMePage from "./pages/AboutMePage/AboutMePage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           element={<CategoryPage />}
         />
         <Route path="/trabajo/obra/:artworkId" element={<ArtworkPage />} />
+        <Route path="/sobre-mi" element={<AboutMePage />} />
         <Route path="/subir" element={<UploadPage />} />
       </Routes>
       <Footer />
