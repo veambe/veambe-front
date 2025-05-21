@@ -16,6 +16,7 @@ const ArtworkUploadForm = () => {
     { id: 5, name: "Textil" },
     { id: 6, name: "Autoedición" },
     { id: 7, name: "Obra personal" },
+    { id: 8, name: "Productos Ilustrados" },
   ];
 
   const handleImageChange = (e) => {

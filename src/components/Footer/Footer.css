@@ -4,7 +4,8 @@ footer {
   height: 65px;
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  position: relative;
+  margin-top: 10%;
 }
 
 

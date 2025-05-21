@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../../services/categoryService";
 import { Link } from "react-router-dom";
+import "./CategoriesList.css"
 
 const CategoriesList = () => {
   const [categories, setCategories] = useState([]);
@@ -25,11 +26,12 @@ const CategoriesList = () => {
   if (!categories.length) return <p>Categoría no encontrada</p>;
 
   return (
-    <ul>
+    <ul className="main-page-list">
       {categories.map((category) => (
-        <li key={category.id}>
+        <li className="category-image" key={category.id}>
           <Link to={`/trabajo/categoria/${encodeURIComponent(category.name)}`}>
-            {category.name}
+          
+            <img src="https://i.ibb.co/fHg39hF/img-seccion-mural.png" width={800} />
           </Link>
         </li>
       ))}

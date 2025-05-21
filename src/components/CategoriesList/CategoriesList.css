@@ -1,0 +1,7 @@
+.main-page-list{
+  display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
