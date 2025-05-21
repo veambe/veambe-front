@@ -1,7 +1,7 @@
 // src/services/artworkService.js
 import axios from "axios";
 
-const BASE_URL = "/api/v1/trabajo";
+const BASE_URL = "http://localhost:8080/api/v1/trabajo";
 
 // Admin ID fijo mientras no hay autenticación
 const ADMIN_ID = 1;

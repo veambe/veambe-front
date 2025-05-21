@@ -1,8 +1,9 @@
 import axios from "axios";
+const BASE_URL = "http://localhost:8080/api/v1/images";
 
 export const uploadImageJson = async (artworkId, imageData) => {
   try {
-    const response = await axios.post(`/api/v1/images/${artworkId}`, imageData);
+    const response = await axios.post(`${BASE_URL}/${artworkId}`, imageData);
     return response.data;
   } catch (error) {
     console.error("Error uploading image (JSON):", error);
@@ -12,7 +13,7 @@ export const uploadImageJson = async (artworkId, imageData) => {
 
 export const getImagesByArtwork = async (artworkId) => {
   try {
-    const response = await axios.get(`/api/v1/images/obra/${artworkId}`);
+    const response = await axios.get(`${BASE_URL}/obra/${artworkId}`);
     return response.data; 
   } catch (error) {
     console.error("Error fetching images by artwork ID:", error);

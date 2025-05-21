@@ -1,0 +1,24 @@
+.artwork-page-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.artwork-page-description {
+  font-size: 2rem;
+}
+
+
+.artwork-image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.artwork-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
