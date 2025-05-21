@@ -28,7 +28,9 @@ const CategoriesList = () => {
     <ul>
       {categories.map((category) => (
         <li key={category.id}>
-          <Link to={`/categoria/${category.id}`}>{category.name}</Link>
+          <Link to={`/trabajo/categoria/${encodeURIComponent(category.name)}`}>
+            {category.name}
+          </Link>
         </li>
       ))}
     </ul>
