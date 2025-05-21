@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 function App() {
@@ -8,7 +9,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/categoria/:id" element={""} /> 
+        <Route
+          path="/trabajo/categoria/:categoryName"
+          element={<CategoryPage />}
+        />
       </Routes>
       <Footer />
     </>
