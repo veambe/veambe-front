@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import "./UploadForm.css";
+
+import { useState } from "react";
 import axios from "axios";
 
 const ArtworkUploadForm = () => {
@@ -79,30 +81,35 @@ const ArtworkUploadForm = () => {
   };
 
   return (
-    <div>
-      <h2>Subir nueva obra</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+    <div className="upload-form-container">
+      <form
+        className="upload-form"
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+      >
         <div>
-          <label>Título:</label>
+          <label className="upload-label-container">Título:</label>
           <input
             type="text"
             value={title}
             required
             onChange={(e) => setTitle(e.target.value)}
+            className="upload-form-input"
           />
         </div>
 
         <div>
-          <label>Descripción:</label>
+          <label className="upload-label-container">Descripción:</label>
           <textarea
             value={description}
             required
             onChange={(e) => setDescription(e.target.value)}
+            className="form-textarea"
           />
         </div>
 
         <div>
-          <label>Categoría:</label>
+          <label className="upload-label-container">Categoría:</label>
           <select
             value={categoryId}
             required
@@ -118,16 +125,22 @@ const ArtworkUploadForm = () => {
         </div>
 
         <div>
-          <label>Imágenes (máximo 10):</label>
+          <label className="upload-label-container">
+            Imágenes (máximo 10):
+          </label>
           <input
             type="file"
             multiple
             accept="image/*"
             onChange={handleImageChange}
+            className="upload-form-input"
           />
         </div>
-
-        <button type="submit">Subir obra</button>
+        <div className="button-container">
+          <button className="upload-form-button" type="submit">
+            Subir obra
+          </button>
+        </div>
       </form>
 
       {message && <p>{message}</p>}
