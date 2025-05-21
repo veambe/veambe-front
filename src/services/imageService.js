@@ -12,7 +12,7 @@ export const uploadImageJson = async (artworkId, imageData) => {
 
 export const getImagesByArtwork = async (artworkId) => {
   try {
-    const response = await axios.get(`/api/v1/images/artwork/${artworkId}`);
+    const response = await axios.get(`/api/v1/images/obra/${artworkId}`);
     return response.data; 
   } catch (error) {
     console.error("Error fetching images by artwork ID:", error);

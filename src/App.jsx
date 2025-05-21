@@ -3,6 +3,7 @@ import Homepage from "./pages/Homepage/Homepage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import UploadPage from "./pages/UploadPage/UploadPAge";
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
           path="/trabajo/categoria/:categoryName"
           element={<CategoryPage />}
         />
+        <Route path="/subir" element={<UploadPage />} />
       </Routes>
       <Footer />
     </>

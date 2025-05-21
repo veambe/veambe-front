@@ -20,12 +20,12 @@ const CategoryDetail = () => {
           response.data.map(async (art) => {
             try {
               const imageRes = await axios.get(
-                `http://localhost:8080/api/v1/images/artwork/${art.id}`
+                `http://localhost:8080/api/v1/images/obra/${art.id}`
               );
               // añade la primera imagen que encuentre
               return {
                 ...art,
-                imageUrl: imageRes.data[0]?.url || null,
+                filePath: imageRes.data[0]?.filePath || null,
               };
             } catch (imgErr) {
               console.error(
@@ -34,7 +34,7 @@ const CategoryDetail = () => {
               );
               return {
                 ...art,
-                imageUrl: null,
+                filePath: null,
               };
             }
           })
@@ -63,10 +63,13 @@ const CategoryDetail = () => {
           {artworks.map((art) => (
             <li key={art.id}>
               <h3>{art.title}</h3>
-              <p>{art.description}</p>
-              {art.imageUrl ? (
+
+              {art.filePath ? (
                 <img
-                  src={`http://localhost:8080/${art.imageUrl}`}
+                  src={`http://localhost:8080/${art.filePath.replace(
+                    /\\/g,
+                    "/"
+                  )}`}
                   alt={art.title}
                   style={{ width: "200px", height: "auto" }}
                 />
