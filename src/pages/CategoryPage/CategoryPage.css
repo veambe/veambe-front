@@ -1,0 +1,23 @@
+.category-page-title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+.category-page-list {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.category-page-artwork {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.artwork-title {
+  font-size: 2rem;
+}

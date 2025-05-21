@@ -10,8 +10,9 @@ h2,
 h3,
 p {
   margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+  font-family: "Space Grotesk",
+    sans-serif;
+}
 
 ul,
 li {
