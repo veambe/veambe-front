@@ -6,7 +6,7 @@ export const uploadImageJson = async (artworkId, imageData) => {
     const response = await axios.post(`${BASE_URL}/${artworkId}`, imageData);
     return response.data;
   } catch (error) {
-    console.error("Error uploading image (JSON):", error);
+    console.error("Error al cargar la imagen (JSON):", error);
     throw error;
   }
 };
@@ -14,9 +14,9 @@ export const uploadImageJson = async (artworkId, imageData) => {
 export const getImagesByArtwork = async (artworkId) => {
   try {
     const response = await axios.get(`${BASE_URL}/obra/${artworkId}`);
-    return response.data; 
+    return response.data;
   } catch (error) {
-    console.error("Error fetching images by artwork ID:", error);
+    console.error("Error cargando imágenes por id de obra:", error);
     throw error;
   }
 };
@@ -37,7 +37,7 @@ export const uploadImageFile = async (artworkId, file) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error uploading image file:", error);
+    console.error("Error al subir la imagen:", error);
     throw error;
   }
 };

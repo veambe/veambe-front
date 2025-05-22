@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { getAllArtworks, deleteArtworkById } from "../../services/artworkService";
+import {
+  getAllArtworks,
+  deleteArtworkById,
+} from "../../services/artworkService";
+import { Link } from "react-router-dom";
 
 const ArtworkListPage = () => {
   const [artworks, setArtworks] = useState([]);
@@ -36,7 +40,7 @@ const ArtworkListPage = () => {
 
   return (
     <div>
-      <h2>All Artworks</h2>
+      <h2>Lista de Obras</h2>
       {artworks.length === 0 ? (
         <p>No artworks available.</p>
       ) : (
@@ -48,8 +52,11 @@ const ArtworkListPage = () => {
                 onClick={() => handleDelete(art.id)}
                 style={{ color: "red" }}
               >
-                Delete
+                Borrar
               </button>
+              <Link to={`/admin/edit/${art.id}`}>
+                <button>Editar</button>
+              </Link>
             </li>
           ))}
         </ul>

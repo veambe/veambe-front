@@ -1,0 +1,72 @@
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-left: 10%;
+}
+
+.update-page-title {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.update-page-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.update-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 10%;
+  margin-top: 8%;
+}
+
+.update-label-container {
+  display: block;
+  flex-direction: column;
+  font-size: 2rem;
+  padding: 10px;
+  margin: 5px;
+}
+
+
+.update-form-input {
+  width: 80%;
+  height: 3rem;
+  padding: 8px;
+  border: solid 3px;
+  border-color: #6dacbf;
+  font-size: 1.5rem;
+}
+
+.form-textarea {
+  border: solid 3px;
+  border-color: #6dacbf;
+  width: 80%;
+  height: 369px;
+  font-size: 1.5rem;
+}
+
+.button-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.update-form-button {
+  font-size: 1rem;
+  width: 110px;
+  height: 73px;
+  border-radius: 20px;
+  margin-top: 25px;
+  border: solid 3px;
+  border-color: #6dacbf;
+  color: #6dacbf;
+  font-weight: 700;
+}

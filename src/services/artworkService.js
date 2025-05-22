@@ -13,7 +13,7 @@ export const createArtwork = async (artwork) => {
     return response.data;
   } catch (error) {
     console.error(
-      "Error creating artwork:",
+      "Error al crear la obra:",
       error.response?.data || error.message
     );
     throw error;
@@ -26,7 +26,7 @@ export const getAllArtworks = async () => {
     const response = await axios.get(BASE_URL);
     return response.data;
   } catch (error) {
-    console.error("Error fetching artworks:", error);
+    console.error("Error al conseguir obra:", error);
     throw error;
   }
 };
@@ -37,7 +37,7 @@ export const getArtworkById = async (artworkId) => {
     const response = await axios.get(`${BASE_URL}/obra/${artworkId}`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching artwork by ID:", error);
+    console.error("Error al obtener obra por id:", error);
     throw error;
   }
 };
@@ -48,7 +48,7 @@ export const getArtworksByCategory = async (categoryName) => {
     const response = await axios.get(`${BASE_URL}/categoria/${categoryName}`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching artworks by category:", error);
+    console.error("Error al obtener obra por categoría:", error);
     throw error;
   }
 };
@@ -58,7 +58,13 @@ export const deleteArtworkById = async (artworkId) => {
   try {
     await axios.delete(`${BASE_URL}/obra/${artworkId}`);
   } catch (error) {
-    console.error("Error deleting artwork:", error);
+    console.error("Error al borrar la obra:", error);
     throw error;
   }
+};
+
+//Actualizar obra
+export const updateArtwork = async (artworkId, updatedData) => {
+  const response = await axios.put(`${BASE_URL}/obra/${artworkId}`, updatedData);
+  return response.data;
 };
