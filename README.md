@@ -1,12 +1,75 @@
-# React + Vite
+# veambe 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of **veambe**, a web platform dedicated to the visual artwork of **Beatriz Oliver**, known professionally as *veambe*. Visitors can explore her portfolio across various artistic fields, learn about her creative journey, and get in touch with her through a contact form.
 
-Currently, two official plugins are available:
+> This frontend is built using **React 19** and consumes a Spring Boot REST API as its backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+##  Public Features
 
-## Expanding the ESLint configuration
+- ✅ View a gallery of all artworks
+- ✅ Filter artworks by category (e.g. Murales, Cerámica, Grabado...)
+- ✅ Read details about each art piece
+- ✅ Learn about the artist in the "About" section
+- ✅ Contact the artist via a secure contact form
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+## Admin Features (Private Route)
+
+Accessible only by the artist (or admin) at a separate, hidden route.
+
+- ✏️ Add new artworks with title, description, category, and up to 10 images
+- 🗑️ Delete existing artworks
+- 🔁 Edit artwork details (title, description, category, and optionally upload new images)
+- 📂 Manage artwork images individually
+
+---
+## Tech Stack
+
+### Frontend
+
+- **React 19**
+- **React Router DOM v7** – for routing
+- **Axios** – for communicating with the backend
+- **React Icons** – for icons and UI elements
+- **Vite** – for fast development and build
+
+### Dev Tools
+
+- **ESLint** – for code quality and linting
+- **TypeScript-ready** (via `@types/react` if needed)
+
+---
+##  Installation
+
+1. Clone the repository:
+ ```bash
+   git clone https://github.com/your-username/veambe-frontend.git
+   cd veambe-frontend
+`````
+2. Install dependencies:
+ ```bash
+ npm install
+`````
+3. Start the development server:
+ ```bash
+npm run dev
+`````
+The app will run at http://localhost:5173/
+
+
+🔗 Backend Connection
+The frontend connects to a backend available at:
+ ```bash
+http://localhost:8080/api/v1/
+`````
+Make sure the backend Spring Boot server is running on port 8080.
+
+🖼️ Credits
+All artwork and content belongs to Beatriz Oliver (veambe)
+
+Developed by Marta Ibarra as part of a personal project
+
+📬 Contact
+
+marta.ibarrac@gmail.com
