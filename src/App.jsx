@@ -7,6 +7,7 @@ import UploadPage from "./pages/UploadPage/UploadPAge";
 import ArtworkPage from "./pages/ArtworkPage/ArtworkPAge";
 import AboutMePage from "./pages/AboutMePage/AboutMePage";
 import ContactForm from "./components/ContactForm/ContactForm";
+import ArtworkListPage from "./components/ArtworkList/ArtworkList";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sobre-mi" element={<AboutMePage />} />
         <Route path="/contacto" element={<ContactForm/>} />
         <Route path="/subir" element={<UploadPage />} />
+        <Route path="/admin" element={<ArtworkListPage/>} /> 
       </Routes>
       <Footer />
     </>

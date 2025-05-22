@@ -52,3 +52,13 @@ export const getArtworksByCategory = async (categoryName) => {
     throw error;
   }
 };
+
+//Borrar obra
+export const deleteArtworkById = async (artworkId) => {
+  try {
+    await axios.delete(`${BASE_URL}/obra/${artworkId}`);
+  } catch (error) {
+    console.error("Error deleting artwork:", error);
+    throw error;
+  }
+};
