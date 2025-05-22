@@ -6,16 +6,18 @@
 
 .artwork-page-description {
   font-size: 2rem;
+  text-align: left;
+  margin: 2%;
 }
 
 
 .artwork-image-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
 
 .artwork-image {
   width: 100%;
