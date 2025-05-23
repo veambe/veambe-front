@@ -58,7 +58,7 @@ const ArtworkUpdateForm = () => {
       }
 
       alert("Obra actualizada con éxito");
-      navigate("/artworks");
+      navigate("/");
     } catch (err) {
       console.error("Error al actualizar la obra:", err);
       alert("Error al actualizar la obra");
@@ -67,9 +67,8 @@ const ArtworkUpdateForm = () => {
 
   return (
     <div>
-        <h2 className="update-page-title">Editar Obra</h2>
+      <h2 className="update-page-title">Editar Obra</h2>
       <form className="update-form" onSubmit={handleSubmit}>
-
         <label className="update-label-container">Título:</label>
         <input
           className="update-form-input"
