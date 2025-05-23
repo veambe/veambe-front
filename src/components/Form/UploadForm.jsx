@@ -36,16 +36,14 @@ const ArtworkUploadForm = () => {
     if (!categoryId) return alert("Por favor, selecciona una categoría");
 
     try {
-      // Paso 1: Crear el objeto artwork completo
       const artworkPayload = {
         title,
         description,
         category: {
-          id: parseInt(categoryId), // muy importante: debe ser número
+          id: parseInt(categoryId), 
         },
       };
 
-      // Enviar al backend (usa ID de admin fijo = 1)
       const artworkResponse = await axios.post(
         "http://localhost:8080/api/v1/trabajo/1",
         artworkPayload
@@ -53,7 +51,6 @@ const ArtworkUploadForm = () => {
 
       const artworkId = artworkResponse.data.id;
 
-      // Paso 2: Subir imágenes
       for (const image of images) {
         const formData = new FormData();
         formData.append("file", image);

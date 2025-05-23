@@ -1,12 +1,9 @@
-// src/services/artworkService.js
 import axios from "axios";
 
 const BASE_URL = "http://localhost:8080/api/v1/trabajo";
 
-// Admin ID fijo mientras no hay autenticación
 const ADMIN_ID = 1;
 
-// Crear una nueva obra (artwork)
 export const createArtwork = async (artwork) => {
   try {
     const response = await axios.post(`${BASE_URL}/${ADMIN_ID}`, artwork);
@@ -20,7 +17,6 @@ export const createArtwork = async (artwork) => {
   }
 };
 
-// Obtener todas las obras
 export const getAllArtworks = async () => {
   try {
     const response = await axios.get(BASE_URL);
@@ -31,7 +27,6 @@ export const getAllArtworks = async () => {
   }
 };
 
-// Obtener obra por ID
 export const getArtworkById = async (artworkId) => {
   try {
     const response = await axios.get(`${BASE_URL}/obra/${artworkId}`);
@@ -42,7 +37,6 @@ export const getArtworkById = async (artworkId) => {
   }
 };
 
-// Obtener obras por categoría
 export const getArtworksByCategory = async (categoryName) => {
   try {
     const response = await axios.get(`${BASE_URL}/categoria/${categoryName}`);
@@ -53,7 +47,6 @@ export const getArtworksByCategory = async (categoryName) => {
   }
 };
 
-//Borrar obra
 export const deleteArtworkById = async (artworkId) => {
   try {
     await axios.delete(`${BASE_URL}/obra/${artworkId}`);
@@ -63,7 +56,6 @@ export const deleteArtworkById = async (artworkId) => {
   }
 };
 
-//Actualizar obra
 export const updateArtwork = async (artworkId, updatedData) => {
   const response = await axios.put(`${BASE_URL}/obra/${artworkId}`, updatedData);
   return response.data;
